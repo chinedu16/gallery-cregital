@@ -78,8 +78,8 @@
         <div class="row">
           <div class="col-md-12 d-md-flex align-items-center" style="justify-content: center;">
             <el-button-group>
-              <el-button type="primary" icon="el-icon-arrow-left">Previous Page</el-button>
-              <el-button type="primary" @click="next_page">Next Page<i class="el-icon-arrow-right el-icon-right"></i></el-button>
+              <el-button type="primary" v-show="prev" @click="prev_page" icon="el-icon-arrow-left">Previous Page</el-button>
+              <el-button type="primary" v-show="next" @click="next_page">Next Page<i class="el-icon-arrow-right el-icon-right"></i></el-button>
             </el-button-group>
           </div>
         </div>
