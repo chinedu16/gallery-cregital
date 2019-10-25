@@ -70,7 +70,10 @@
               <h5> <span style="color: grey;">Link to photgrapher:</span>  {{image.photographer_url}}</h5>
 
               <div class="col-md-12 d-md-flex align-items-center" style="margin-top: 4rem;" >
-                <el-button download="myFile" :href="image.src.original" type="primary">Download<i class="el-icon-upload el-icon-right"></i></el-button>
+                <a :href="image.src.original" download="">
+                  <el-button download="myFile" :href="image.src.original" type="primary">Download<i class="el-icon-upload el-icon-right"></i></el-button>
+                </a>
+              
               </div>
             </div>
           </div>

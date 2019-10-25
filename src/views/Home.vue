@@ -14,9 +14,6 @@
     
 
     <header class="site-navbar py-3" role="banner">
-      
-      
-
 
       <div class="container">
         <div class="row align-items-center">
@@ -53,8 +50,8 @@
       </div>
       
     </header>
-
-    <div class="site-blocks-cover overlay inner-page-cover" style="background-image: url('images/hero_bg_3.jpg');" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover overlay inner-page-cover" style="background-image: url('./hero_bg_2.jpg');">
+    <!-- <div class="site-blocks-cover overlay inner-page-cover" style="background-image: url('images/hero_bg_3.jpg');" data-stellar-background-ratio="0.5"> -->
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7 text-center" data-aos="fade-up">
@@ -62,7 +59,8 @@
               <input type="subject" placeholder="Search Term" v-model="search" id="subject" class="form-control">
             </div>
             <div class="col-md-12" style="margin-top: 2rem;">
-              <input type="submit" value="Search Images" @click="result" class="btn btn-primary py-2 px-4 text-white">
+              <el-button @click="result"  type="primary">Search Images</el-button>
+              <!-- <input type="submit" value="Search Images" @click="result" class="btn btn-primary py-2 px-4 text-white"> -->
             </div>
                
           </div>
@@ -133,7 +131,7 @@ export default {
   },
   methods: {
     result: function () {
-      this.$router.push({ name: 'about', params: {search: this.search} })
+      this.$router.push({ name: 'results', params: {search: this.search} })
     }
   },
   created () {
