@@ -61,13 +61,17 @@
         
 
         <div class="row no-gutters" id="lightgallery">
-          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 item">
-            <div class="col-md-5">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 item" style="display:flex;">
+            <div class="col-md-6">
               <a href="#"><img :src="image.src.original" alt="IMage" class="img-fluid"></a>
             </div>
-            <div class="col-md-5">
-              <h5>Protographer: {{image.photographer}}</h5>
-              <h5>Link to photgrapher: {{image.photographer_url}}</h5>
+            <div class="col-md-6">
+              <h5> <span style="color: grey;">Protographer: </span> {{image.photographer}}</h5>
+              <h5> <span style="color: grey;">Link to photgrapher:</span>  {{image.photographer_url}}</h5>
+
+              <div class="col-md-12 d-md-flex align-items-center" style="margin-top: 4rem;" >
+                <el-button download="myFile" :href="image.src.original" type="primary">Download<i class="el-icon-upload el-icon-right"></i></el-button>
+              </div>
             </div>
           </div>
 
@@ -78,12 +82,7 @@
 
     <div class="py-3 mb-5 pt-5">
       <div class="container">
-        <div class="row">
-          <div class="col-md-12 d-md-flex align-items-center" style="justify-content: center;">
-            <a :href="image.src.original" download >Download</a>
-            <el-button download="myFile" :href="image.src.original" type="primary">Download<i class="el-icon-upload el-icon-right"></i></el-button>
-          </div>
-        </div>
+        
       </div>
     </div>
 
