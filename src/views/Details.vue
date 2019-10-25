@@ -63,10 +63,11 @@
         <div class="row no-gutters" id="lightgallery">
           <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 item">
             <div class="col-md-5">
-              <a href="#"><img src="../static/images/nature_small_1.jpg" alt="IMage" class="img-fluid"></a>
+              <a href="#"><img :src="image.src.original" alt="IMage" class="img-fluid"></a>
             </div>
             <div class="col-md-5">
-              dsdhdjdjgdhsgdghdhgsdhsd
+              <h5>Protographer: {{image.photographer}}</h5>
+              <h5>Link to photgrapher: {{image.photographer_url}}</h5>
             </div>
           </div>
 
@@ -79,7 +80,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 d-md-flex align-items-center" style="justify-content: center;">
-            <el-button type="primary">Download<i class="el-icon-upload el-icon-right"></i></el-button>
+            <a :href="image.src.original" download >Download</a>
+            <el-button download="myFile" :href="image.src.original" type="primary">Download<i class="el-icon-upload el-icon-right"></i></el-button>
           </div>
         </div>
       </div>
@@ -129,9 +131,20 @@
 
 <script>
   export default {
+     data: function () {
+      return {
+        image: ''
+      }
+    },
     methods: {
       handleClick() {
         alert('button click');
+      }
+    },
+    created () {
+      this.image = this.$route.params.image
+      if (!this.$route.params.image) {
+        this.$router.push('/')
       }
     }
   }
