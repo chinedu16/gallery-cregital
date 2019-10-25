@@ -89,40 +89,13 @@
             </div>
           </div>
           <div class="col-lg-4 mb-5 mb-lg-0">
-            <div class="row mb-5">
-              <div class="col-md-12">
-                <h3 class="footer-heading mb-4">Navigations</h3>
-              </div>
-              <div class="col-md-6 col-lg-6">
-                <ul class="list-unstyled">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Photography</a></li>
-                  <li><a href="#">Gallery</a></li>
-                  <li><a href="#">Services</a></li>
-                </ul>
-              </div>
-              <div class="col-md-6 col-lg-6">
-                <ul class="list-unstyled">
-                  <li><a href="#">About Me</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-                  <li><a href="#">Contact Me</a></li>
-                  <li><a href="#">Terms</a></li>
-                </ul>
-              </div>
-            </div>
+            
 
 
           </div>
 
           <div class="col-lg-4 mb-5 mb-lg-0">
-            <h3 class="footer-heading mb-4">Follow Me</h3>
-
-                <div>
-                  <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                  <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                  <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                  <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-                </div>
+          
 
             
 
@@ -133,7 +106,7 @@
           <div class="col-md-12">
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy; All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            Copyright &copy; All rights reserved | Cregit
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
@@ -150,7 +123,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import api from '../api/index';
 
 export default {
   name: 'home',
@@ -162,7 +135,18 @@ export default {
   methods: {
     result: function () {
       this.$router.push('/about')
+    },
+    getImages: async function () {
+      try {
+        const response = await api.search()
+        console.log(response)
+      } catch (error) {
+        console.log(error)
+      }
     }
+  },
+  created () {
+    this.getImages()
   }
 }
 </script>
