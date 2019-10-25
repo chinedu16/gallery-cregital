@@ -139,9 +139,7 @@ export default {
     getImages: async function () {
       try {
         const response = await api.search()
-        console.log(response)
       } catch (error) {
-        console.log(error)
       }
     }
   },
