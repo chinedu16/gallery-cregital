@@ -1,7 +1,6 @@
 <template>
   <div class="about">
       <div class="site-wrap">
-
       
       <div class="site-mobile-menu">
         <div class="site-mobile-menu-header">
@@ -58,81 +57,17 @@
       <div class="site-section"  data-aos="fade">
         
       <div class="container">
-        <el-dropdown split-button type="primary" @click="handleClick">
-          Sort By
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>Views</el-dropdown-item>
+        <h1>Search Results for "{{input.search}}"</h1>
+        <el-dropdown split-button trigger="click" type="primary" @click="handleClick"> Sort By
+          <el-dropdown-menu>
+            <el-dropdown-item value='views'>views</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
-
-
+        
         <div class="row no-gutters" id="lightgallery">
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_1.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque hic excepturi fugit, sunt impedit fuga tempora, ad amet aliquid?</p>">
-            <a href="#"><img src="../static/images/nature_small_1.jpg" alt="IMage" class="img-fluid"></a>
+          <div v-for="image in images" :key="image.id" class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" @click="details(image)">
+            <img :src="image.src.original" height="600" alt="IMage" class="img-fluid">
           </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_2.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam omnis quaerat molestiae, praesentium. Ipsam, reiciendis. Aut molestiae animi earum laudantium.</p>">
-            <a href="#"><img src="../static/images/nature_small_2.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_3.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem reiciendis, dolorum illo temporibus culpa eaque dolore rerum quod voluptate doloribus.</p>">
-            <a href="#"><img src="../static/images/nature_small_3.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_5.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, voluptatum voluptate tempore aliquam, dolorem distinctio. In quas maiores tenetur sequi.</p>">
-            <a href="#"><img src="../static/images/nature_small_5.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_6.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum cum culpa blanditiis illum, voluptatum iusto quisquam mollitia debitis quaerat maiores?</p>">
-            <a href="#"><img src="../static/images/nature_small_6.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_4.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim perferendis quae iusto omnis praesentium labore tempore eligendi quo corporis sapiente.</p>">
-            <a href="#"><img src="../static/images/nature_small_4.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_5.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, voluptatum voluptate tempore aliquam, dolorem distinctio. In quas maiores tenetur sequi.</p>">
-            <a href="#"><img src="../static/images/nature_small_5.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_6.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum cum culpa blanditiis illum, voluptatum iusto quisquam mollitia debitis quaerat maiores?</p>">
-            <a href="#"><img src="../static/images/nature_small_6.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_7.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores similique impedit possimus, laboriosam enim at placeat nihil voluptatibus voluptate hic!</p>">
-            <a href="#"><img src="../static/images/nature_small_7.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_8.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam vitae sed cum mollitia itaque soluta laboriosam eaque sit ratione, aliquid.</p>">
-            <a href="#"><img src="../static/images/nature_small_8.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_9.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem reiciendis debitis beatae facilis quos, enim quis nobis magnam architecto earum!</p>">
-            <a href="#"><img src="../static/images/nature_small_9.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_9.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque officiis magnam, facilis nam eos perspiciatis eligendi pariatur numquam debitis quos!</p>">
-            <a href="#"><img src="../static/images/nature_small_9.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_8.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis consequatur quam et, delectus, cum iste ipsa animi eligendi obcaecati nemo.</p>">
-            <a href="#"><img src="../static/images/nature_small_8.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_7.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quia illo voluptatibus numquam inventore, ab asperiores molestiae distinctio atque nihil.</p>">
-            <a href="#"><img src="../static/images/nature_small_7.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_6.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt unde placeat obcaecati sapiente illum, fuga nostrum necessitatibus delectus maiores magnam.</p>">
-            <a href="#"><img src="../static/images/nature_small_6.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_5.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dignissimos non consectetur. Facilis totam, explicabo nam iure! Veniam modi, molestiae.</p>">
-            <a href="#"><img src="../static/images/nature_small_5.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_4.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias minus voluptatibus inventore odio. Iure amet nesciunt a, officia quo ex.</p>">
-            <a href="#"><img src="../static/images/nature_small_4.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_3.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium illum consectetur dolorum consequuntur sint doloribus eveniet deleniti! Illo, quibusdam, earum.</p>">
-            <a href="#"><img src="../static/images/nature_small_3.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_2.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ad iure, inventore asperiores, cupiditate optio dignissimos labore quidem totam. Dignissimos.</p>">
-            <a href="#"><img src="../static/images/nature_small_2.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="../static/images/big-../static/images/nature_big_1.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam temporibus totam similique provident delectus quos fugiat officia earum nisi voluptatibus?</p>">
-            <a href="#"><img src="../static/images/nature_small_1.jpg" alt="IMage" class="img-fluid"></a>
-          </div>
-
-
-
         </div>
       </div>
     </div>
@@ -144,7 +79,7 @@
           <div class="col-md-12 d-md-flex align-items-center" style="justify-content: center;">
             <el-button-group>
               <el-button type="primary" icon="el-icon-arrow-left">Previous Page</el-button>
-              <el-button type="primary">Next Page<i class="el-icon-arrow-right el-icon-right"></i></el-button>
+              <el-button type="primary" @click="next_page">Next Page<i class="el-icon-arrow-right el-icon-right"></i></el-button>
             </el-button-group>
           </div>
         </div>
@@ -201,17 +136,45 @@ export default {
         search: ''
       },
       images: '',
-      error: ''
+      error: '',
+      sort: '',
+      next: '',
+      prev: ''
     }
   },
   methods: {
     handleClick() {
       alert('button click');
     },
-    getImages: async function () {
+    getImages: async function (search) {
       try {
-        const response = await api.search()
-        this.images = response
+        const response = await api.search(search)
+        this.images = response.data.photos
+        this.next = response.data.next_page
+        this.prev = response.data.prev_page
+      } catch (error) {
+        this.error = error
+      }
+    },
+    details: function (image) {
+      this.$router.push({ name: 'details', params: {image: image} })
+    },
+    next_page: async function () {
+      try {
+        const response = await api.next(this.next)
+        this.images = response.data.photos
+        this.next = response.data.next_page
+        this.prev = response.data.prev_page
+      } catch (error) {
+        this.error = error
+      }
+    },
+    prev_page: async function () {
+      try {
+        const response = await api.next(this.prev)
+        this.images = response.data.photos
+        this.next = response.data.next_page
+        this.prev = response.data.prev_page
       } catch (error) {
         this.error = error
       }
@@ -219,7 +182,10 @@ export default {
   },
   created () {
     this.input.search = this.$route.params.search
-    this.getImages()
+    this.getImages(this.$route.params.search)
+    if (!this.$route.params.search) {
+      this.$router.push('/')
+    }
   }
 }
 </script>
