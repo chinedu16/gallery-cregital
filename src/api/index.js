@@ -11,12 +11,24 @@ async function logIn (username, password) {
   return response
 }
 
-async function search () {
-  const response = await axios.get(`${baseUrl}/search?query=life`)
+async function search (search) {
+  const response = await axios.get(`${baseUrl}/search?query=${search}&per_page=20&page=1`)
+  return response
+}
+
+async function next (url) {
+  const response = await axios.get(url)
+  return response
+}
+
+async function prev (url) {
+  const response = await axios.get(url)
   return response
 }
 
 export default {
   logIn,
-  search
+  search,
+  next,
+  prev
 }
