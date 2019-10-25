@@ -193,13 +193,35 @@
 </template>
 
 <script>
-  export default {
-    methods: {
-      handleClick() {
-        alert('button click');
+import api from '../api/index';
+export default {
+  data: function () {
+    return {
+      input: {
+        search: ''
+      },
+      images: '',
+      error: ''
+    }
+  },
+  methods: {
+    handleClick() {
+      alert('button click');
+    },
+    getImages: async function () {
+      try {
+        const response = await api.search()
+        this.images = response
+      } catch (error) {
+        this.error = error
       }
     }
+  },
+  created () {
+    this.input.search = this.$route.params.search
+    this.getImages()
   }
+}
 </script>
 
 <style>

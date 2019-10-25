@@ -123,7 +123,6 @@
 </template>
 
 <script>
-import api from '../api/index';
 
 export default {
   name: 'home',
@@ -134,17 +133,10 @@ export default {
   },
   methods: {
     result: function () {
-      this.$router.push('/about')
-    },
-    getImages: async function () {
-      try {
-        const response = await api.search()
-      } catch (error) {
-      }
+      this.$router.push({ name: 'about', params: {search: this.search} })
     }
   },
   created () {
-    this.getImages()
   }
 }
 </script>
