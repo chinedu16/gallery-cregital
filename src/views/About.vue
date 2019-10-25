@@ -21,7 +21,7 @@
           <div class="row align-items-center">
             
             <div class="col-6 col-xl-2">
-              <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Cregital<span class="text-primary">.</span></a></h1>
+              <h1 class="mb-0"><a class="text-black h2 mb-0" @click="home" style="text-decoration: none;">Cregital<span class="text-primary">.</span></a></h1>
             </div>
             <div class="col-10 col-md-8 d-none d-xl-block">
             
@@ -92,7 +92,7 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="mb-5">
-              <h3 class="footer-heading mb-4">About Cregit</h3>
+              <h3 class="footer-heading mb-4">About Cregital</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
             </div>
           </div>
@@ -114,7 +114,7 @@
           <div class="col-md-12">
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy; All rights reserved | Cregit
+            Copyright &copy; All rights reserved | Cregital
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
@@ -145,6 +145,9 @@ export default {
   methods: {
     handleClick() {
       alert('button click');
+    },
+    home : function () {
+      this.$router.push('/')
     },
     getImages: async function (search) {
       try {
